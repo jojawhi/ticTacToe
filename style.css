@@ -75,7 +75,7 @@ body,
 }
 
 #pageContainer {
-    padding: 1rem 0.5rem 0 0.5rem;
+    padding: 2rem 0.5rem 0 0.5rem;
     text-align: center;
 }
 
@@ -84,9 +84,9 @@ body,
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 0.5rem;
-    width: 15rem;
-    height: 15rem;
-    margin: 1rem auto;
+    width: 16rem;
+    height: 16rem;
+    margin: 3rem auto;
     justify-items: center;
     align-items: center;
     background: var(--grey-1);
@@ -94,6 +94,7 @@ body,
 
 .pageTitle {
     font-size: 2rem;
+    color: var(--grey-1);
     opacity: 0.9;
 }
 
@@ -132,7 +133,69 @@ body,
 }
 
 .boardSpace {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 100%;
-    background: var(--white-1);
+    padding: 0;
+    align-content: center;
+    background: var(--background);
 }
+
+/*
+.ex::after, .ex::before {
+    content:'';
+    position: absolute;
+    left: 1.75rem;
+    top: 5.75rem;
+    width: 4.5rem;
+    height: .5rem;
+    background-color: var(--teal-1);
+    border-radius: 2px;
+    box-shadow:
+        0 0 2px 0 var(--white-2),
+        0 0 4px 0 var(--teal-1),
+        0 0 6px 0 var(--teal-1);
+}
+
+.ex::before{
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+.ex::after{
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+*/
+
+.exDiv {
+    font-size: 4.25rem;
+    font-weight: 900;
+    color: var(--teal-1);
+}
+
+.ex {
+    text-shadow:
+        0 0 1px var(--white-2),
+        0 0 3px var(--teal-1),
+        0 0 10px var(--teal-1);
+}
+
+.ohDiv {
+    height: 4rem;
+    width: 4rem;
+    margin: 0 auto;
+    background: transparent;
+    border-radius: 50%;
+    border: .375rem var(--pink-1) solid;
+    box-shadow:
+        0 0 2px 0 var(--white-2),
+        0 0 4px 0 var(--pink-1),
+        0 0 6px 0 var(--pink-1),
+        inset 0 0 2px 0 var(--white-2),
+        inset 0 0 4px 0 var(--pink-1),
+        inset 0 0 6px 0 var(--pink-1);
+    }
