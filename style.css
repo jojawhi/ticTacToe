@@ -89,6 +89,7 @@ body,
     margin: 3rem auto;
     justify-items: center;
     align-items: center;
+    border-radius: 4px;
     background: var(--grey-1);
 }
 
@@ -141,6 +142,13 @@ body,
     padding: 0;
     align-content: center;
     background: var(--background);
+    border-radius: 4px;
+    transition: all 300ms;
+}
+
+.boardSpace:hover,
+.boardSpace:focus {
+    box-shadow: inset 0 0 6px 0 var(--white-1);
 }
 
 /*
@@ -172,6 +180,7 @@ body,
 */
 
 .exDiv {
+    pointer-events: none;
     font-size: 4.25rem;
     font-weight: 900;
     color: var(--teal-1);
@@ -182,6 +191,18 @@ body,
         0 0 1px var(--white-2),
         0 0 3px var(--teal-1),
         0 0 10px var(--teal-1);
+
+        /*
+        https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting
+        prevent text-selection
+        */
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 .ohDiv {
