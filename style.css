@@ -72,6 +72,7 @@ body,
     width: 100%;
     font-family: 'Audiowide', sans-serif;
     background: var(--background);
+    overflow: none;
 }
 
 #pageContainer {
@@ -91,6 +92,8 @@ body,
     align-items: center;
     border-radius: 4px;
     background: var(--grey-1);
+    box-shadow:
+        0 0 10px 2px var(--grey-1);
 }
 
 .pageTitle {
@@ -219,4 +222,104 @@ body,
         inset 0 0 2px 0 var(--white-2),
         inset 0 0 4px 0 var(--pink-1),
         inset 0 0 6px 0 var(--pink-1);
+}
+
+.winLine {
+    position: absolute;
+    height: 0.5rem;
+    width: 0.5rem;
+    background: var(--yellow-1);
+    border-radius: 3px;
+    box-shadow:
+        0 0 2px 0 var(--white-2),
+        0 0 4px 0 var(--yellow-1),
+        0 0 6px 0 var(--yellow-1);
+}
+
+.firstColumn {
+    top: 7.5rem;
+    transform: translateX(-5.5rem);
+    animation: verticalAnimate 1s linear forwards;
+}
+
+.secondColumn {
+    top: 7.5rem;
+    animation: verticalAnimate 1s linear forwards;
+}
+
+.thirdColumn {
+    top: 7.5rem;
+    transform: translateX(5.5rem);
+    animation: verticalAnimate 1s linear forwards;
+}
+
+.firstRow {
+    left: 1.8rem;
+    transform: translateY(-5.5rem);
+    animation: horizontalAnimate 1s linear forwards;
+}
+
+.secondRow {
+    left: 1.8rem;
+    animation: horizontalAnimate 1s linear forwards;
+}
+
+.thirdRow {
+    left: 1.8rem;
+    transform: translateY(5.5rem);
+    animation: horizontalAnimate 1s linear forwards;
+}
+
+.diagonalLeft {
+    top: 7.875rem;
+    left: 2rem;
+    transform: rotate(-45deg);
+    transform-origin: top;
+    animation: diagonalAnimate 1s linear forwards;
+}
+
+.diagonalRight {
+    top: 7.875rem;
+    right: 2rem;
+    transform: rotate(45deg);
+    transform-origin: top;
+    animation: diagonalAnimate 1s linear forwards;
+}
+
+@keyframes verticalAnimate {
+    0% {
+        height: 0.5rem;
+        width: 0.5rem;
     }
+
+    100% {
+        height: 15rem;
+        width: 0.5rem;
+    }
+}
+
+@keyframes horizontalAnimate {
+    0% {
+        height: 0.5rem;
+        width: 0.5rem;
+    }
+
+    100% {
+        height: 0.5rem;
+        width: 15rem;
+    }
+}
+
+@keyframes diagonalAnimate {
+    0% {
+        height: 0.5rem;
+    }
+
+    100% {
+        height: 20rem;
+    }
+}
+
+.hidden {
+    display: none;
+}
