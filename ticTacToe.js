@@ -7,7 +7,6 @@ Player function
 - Choose player symbol
 - Determine who goes first
 
-
 Player 1 object
 
 Player 2 object
