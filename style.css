@@ -103,14 +103,8 @@ body,
 }
 
 .teal {
-    /*
-    color: var(--teal-1);
-    text-shadow:
-        0 0 1px var(--white-2),
-        0 0 3px var(--teal-1),
-        0 0 10px var(--teal-1);
-    */
-    animation: tealFlicker 3s infinite alternate;
+
+    animation: tealFlicker 10s infinite alternate;
 
 }
 
@@ -125,25 +119,15 @@ body,
 */
 
 .pink {
-    /*
-    color: var(--pink-1);
-    text-shadow:
-        0 0 1px var(--white-2),
-        0 0 3px var(--pink-1),
-        0 0 10px var(--pink-1);
-    */
-    animation: pinkFlicker 6s -2s infinite alternate;
+
+    animation: pinkFlicker 12s -2s infinite alternate;
+
 }
 
 .yellow {
-    /*
-    color: var(--yellow-1);
-    text-shadow:
-        0 0 1px var(--white-2),
-        0 0 3px var(--yellow-1),
-        0 0 10px var(--yellow-1);
-    */
-    animation: yellowFlicker 6s -6s infinite alternate;
+
+    animation: yellowFlicker 12s -6s infinite alternate;
+
 }
 
 .boardSpace {
@@ -264,18 +248,18 @@ body,
 }
 
 .firstRow {
-    left: 1.8rem;
+    left: 1.85rem;
     transform: translateY(-5.5rem);
     animation: horizontalAnimate 1s linear forwards;
 }
 
 .secondRow {
-    left: 1.8rem;
+    left: 1.85rem;
     animation: horizontalAnimate 1s linear forwards;
 }
 
 .thirdRow {
-    left: 1.8rem;
+    left: 1.85rem;
     transform: translateY(5.5rem);
     animation: horizontalAnimate 1s linear forwards;
 }
@@ -297,14 +281,13 @@ body,
 }
 
 @keyframes tealFlicker {
-    0%,
-    16%,
-    18%,
+
+    1%,
     21%,
     23%,
     54%,
     56%,
-    100% {
+    99% {
         color: var(--teal-1);
         text-shadow:
             0 0 1px var(--white-2),
@@ -314,19 +297,16 @@ body,
             0 0 40px var(--teal-1);
   }
 
-  17%,
   22%,
   55% {
     color: var(--teal-1);
     text-shadow:
-        0 0 2px var(--white-2),
+        0 0 1px var(--white-2),
         0 0 2px var(--teal-1),
-        0 0 2px var(--teal-1),
-        0 0 4px var(--teal-1),
         0 0 4px var(--teal-1),
         0 0 6px var(--teal-1),
-        0 0 40px var(--teal-1),
-        0 0 50px var(--teal-1);
+        0 0 10px var(--teal-1),
+        0 0 30px var(--teal-1),
   }
 }
 
@@ -334,9 +314,7 @@ body,
     0%,
     16%,
     18%,
-    21%,
-    23%,
-    100% {
+    99% {
         color: var(--pink-1);
         text-shadow:
             0 0 1px var(--white-2),
@@ -346,28 +324,23 @@ body,
             0 0 40px var(--pink-1);
   }
 
-  17%,
-  22% {
+  17% {
     color: var(--pink-1);
     text-shadow:
-        0 0 2px var(--white-2),
+        0 0 1px var(--white-2),
         0 0 2px var(--pink-1),
-        0 0 2px var(--pink-1),
-        0 0 4px var(--pink-1),
         0 0 4px var(--pink-1),
         0 0 6px var(--pink-1),
-        0 0 40px var(--pink-1),
-        0 0 50px var(--pink-1);
+        0 0 10px var(--pink-1),
+        0 0 30px var(--pink-1),
   }
 }
 
 @keyframes yellowFlicker {
-    0%,
-    16%,
-    18%,
+    1%,
     74%,
     76%,
-    100% {
+    99% {
         color: var(--yellow-1);
         text-shadow:
             0 0 1px var(--white-2),
@@ -377,18 +350,15 @@ body,
             0 0 40px var(--yellow-1);
   }
 
-  17%,
   75% {
     color: var(--yellow-1);
     text-shadow:
-        0 0 2px var(--white-2),
+        0 0 1px var(--white-2),
         0 0 2px var(--yellow-1),
-        0 0 2px var(--yellow-1),
-        0 0 4px var(--yellow-1),
         0 0 4px var(--yellow-1),
         0 0 6px var(--yellow-1),
-        0 0 40px var(--yellow-1),
-        0 0 50px var(--yellow-1);
+        0 0 10px var(--yellow-1),
+        0 0 30px var(--yellow-1),
   }
 }
 
