@@ -58,6 +58,7 @@ table {
     --teal-1: hsl(185, 100%, 50%);
     --pink-1: hsl(305, 100%, 70%);
     --yellow-1: hsl(50, 100%, 50%);
+    --yellow-2: hsl(50, 100%, 30%);
     --white-1: hsl(40, 30%, 95%);
     --white-2: hsl(40 30% 95% / 0.25);
     --background: hsl(0, 0%, 17%);
@@ -76,7 +77,10 @@ body,
 }
 
 #pageContainer {
-    padding: 2rem 0.5rem 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 0.5rem;
     text-align: center;
 }
 
@@ -96,15 +100,81 @@ body,
         0 0 10px 2px var(--grey-1);
 }
 
+#scoresContainer,
+#buttonsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+}
+
+.playerText {
+    font-size: 1.375rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+#playerOneScore h2 {
+    color: var(--teal-1);
+    text-shadow:
+        0 0 1px var(--white-1),
+        0 0 3px var(--teal-1),
+        0 0 6px var(--teal-1);
+}
+
+#playerTwoScore h2 {
+    color: var(--pink-1);
+    text-shadow:
+        0 0 1px var(--white-1),
+        0 0 3px var(--pink-1),
+        0 0 6px var(--pink-1);
+}
+
+.scoreText {
+    font-size: 1.375rem;
+    color: var(--yellow-1);
+    text-shadow:
+        0 0 1px var(--white-1),
+        0 0 2px var(--yellow-1),
+        0 0 4px var(--yellow-1);
+}
+
 .pageTitle {
     font-size: 2rem;
     color: var(--grey-1);
     opacity: 0.9;
 }
 
+.button {
+    height: 2.5rem;
+    background: transparent;
+    color: var(--yellow-2);
+    font-family: 'Audiowide', sans-serif;
+    font-size: 1.25rem;
+    border: 2px solid var(--yellow-2);
+    border-radius: 6px;
+    transition: all 300ms;
+}
+
+.button:hover {
+    color: var(--yellow-1);
+    text-shadow:
+        0 0 1px var(--white-1),
+        0 0 2px var(--yellow-1),
+        0 0 4px var(--yellow-1);
+    border: 2px solid var(--yellow-1);
+    box-shadow:
+        0 0 1px 0 var(--white-1),
+        0 0 2px 0 var(--yellow-1),
+        0 0 4px 0 var(--yellow-1),
+        inset 0 0 1px 0 var(--white-1),
+        inset 0 0 2px 0 var(--yellow-1),
+        inset 0 0 4px 0 var(--yellow-1);
+
+}
+
 .teal {
 
-    animation: tealFlicker 10s infinite alternate;
+    animation: tealFlicker 10s infinite;
 
 }
 
@@ -120,13 +190,13 @@ body,
 
 .pink {
 
-    animation: pinkFlicker 12s -2s infinite alternate;
+    animation: pinkFlicker 12s -2s infinite;
 
 }
 
 .yellow {
 
-    animation: yellowFlicker 12s -6s infinite alternate;
+    animation: yellowFlicker 12s infinite alternate;
 
 }
 
@@ -314,6 +384,7 @@ body,
     0%,
     16%,
     18%,
+    20%,
     99% {
         color: var(--pink-1);
         text-shadow:
@@ -324,7 +395,8 @@ body,
             0 0 40px var(--pink-1);
   }
 
-  17% {
+  17%,
+  19% {
     color: var(--pink-1);
     text-shadow:
         0 0 1px var(--white-2),
@@ -337,7 +409,12 @@ body,
 }
 
 @keyframes yellowFlicker {
-    1%,
+    0%,
+    59% {
+        color: var(--grey-1);
+        text-shadow: none;
+    }
+    60%,
     74%,
     76%,
     99% {
