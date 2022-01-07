@@ -44,3 +44,67 @@ Game function
 
 
 */
+
+class Game {
+    constructor(board, playerOne, playerTwo) {
+        this.board = board,
+        this.playerOne = playerOne,
+        this.playerTwo = playerTwo
+    }
+
+    createGameBoard() {
+        const gameBoard = new Gameboard();
+        gameBoard.generateGameBoard();
+        this.board = gameBoard;
+    }
+
+
+    createPlayers() {
+        const playerOne = new Player();
+        this.playerOne = playerOne;
+        const playerTwo = new Player();
+        this.playerTwo = playerTwo;
+
+        playerOne.name = "playerOne";
+        playerOne.symbol = "x";
+        playerOne.score = 0;
+        playerOne.myTurn = true;
+
+        playerTwo.name = "playerTwo";
+        playerTwo.symbol = "o";
+        playerTwo.score = 0;
+        playerTwo.myTurn = false;
+    }
+
+    /*
+    updateScore() {
+
+    }
+
+    takeTurn() {
+
+    }
+
+    newGame() {
+
+    }
+
+    resetGame() {
+
+
+
+    }
+    */
+}
+
+const newGame = new Game();
+
+newGame.createGameBoard();
+newGame.createPlayers();
+
+//let board = new Gameboard();
+
+//board.generateGameBoard();
+
+
+console.log(newGame);
