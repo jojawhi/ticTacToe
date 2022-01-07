@@ -47,43 +47,83 @@ Game function
 
 class Game {
     constructor(board, playerOne, playerTwo) {
+
         this.board = board,
         this.playerOne = playerOne,
         this.playerTwo = playerTwo
+
     }
 
     createGameBoard() {
+
         const gameBoard = new Gameboard();
         gameBoard.generateGameBoard();
         this.board = gameBoard;
+
+        for (const space of gameBoard.spaces) {
+
+            space.addEventListener('click', () => {
+
+                // console.log(this.spaces.indexOf(boardSpace));
+
+                // console.log(boardSpace.innerHTML);
+
+
+                if (space.innerHTML === '' && this.playerOne.myTurn === true) {
+
+                    gameBoard.placeEx(space);
+
+                } else if (space.innerHTML === '' && this.playerTwo.myTurn === true) {
+
+                    gameBoard.placeOh(space);
+
+                } else {
+
+                    alert('That one is taken! Pick an empty one!');
+
+                }
+            });
+        }
+
+
     }
 
 
     createPlayers() {
+
         const playerOne = new Player();
-        this.playerOne = playerOne;
         const playerTwo = new Player();
-        this.playerTwo = playerTwo;
 
-        playerOne.name = "playerOne";
-        playerOne.symbol = "x";
-        playerOne.score = 0;
-        playerOne.myTurn = true;
+        this.playerOne = playerOne.generatePlayerOne();
+        this.playerTwo = playerTwo.generatePlayerTwo();
 
-        playerTwo.name = "playerTwo";
-        playerTwo.symbol = "o";
-        playerTwo.score = 0;
-        playerTwo.myTurn = false;
     }
 
     /*
+    checkRow() {
+
+
+
+    }
+
     updateScore() {
+
+    }
+
+    changeTurn() {
+
+        this.playerOne.myTurn = !this.playerOne.myTurn;
+        this.playerTwo.myTurn = !this.playerTwo.myTurn;
 
     }
 
     takeTurn() {
 
+
+
     }
+
+
 
     newGame() {
 
