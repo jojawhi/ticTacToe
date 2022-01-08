@@ -15,6 +15,10 @@ class Gameboard {
 
         for (const boardSpace of gameBoardSpaces) {
 
+            //const value = boardSpace.getAttribute('value');
+            //this.spaces[value] = value;
+            //OR
+            //this.spaces.push(value);
             this.spaces.push(boardSpace);
 
         }

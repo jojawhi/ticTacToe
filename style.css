@@ -56,7 +56,9 @@ table {
 
 :root {
     --teal-1: hsl(185, 100%, 50%);
+    --teal-2: hsl(185, 70%, 15%);
     --pink-1: hsl(305, 100%, 70%);
+    --pink-2: hsl(305, 70%, 15%);
     --yellow-1: hsl(50, 100%, 50%);
     --yellow-2: hsl(50, 100%, 30%);
     --white-1: hsl(40, 30%, 95%);
@@ -348,6 +350,14 @@ body,
     transform: rotate(45deg);
     transform-origin: top;
     animation: diagonalAnimate 1s linear forwards;
+}
+
+.p1 {
+    background: var(--teal-2);
+}
+
+.p2 {
+    background: var(--pink-2);
 }
 
 @keyframes tealFlicker {
