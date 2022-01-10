@@ -70,13 +70,13 @@ class Game {
 
                     gameBoard.placeEx(space);
                     space.classList.add('p1');
-                    this.addOwnedSpace(value); // replace addOwnedSpace() with takeTurn()
+                    this.takeTurn(value, activePlayer); // replaced addOwnedSpace() with takeTurn()
 
                 } else if (space.innerHTML === '' && this.playerTwo.myTurn === true) {
 
                     gameBoard.placeOh(space);
                     space.classList.add('p2');
-                    this.addOwnedSpace(value); // replace addOwnedSpace() with takeTurn()
+                    this.takeTurn(value, activePlayer); // replaced addOwnedSpace() with takeTurn()
 
                 } else {
 
@@ -86,6 +86,7 @@ class Game {
             });
         }
 
+        this.createButtons();
 
     }
 
@@ -104,9 +105,7 @@ class Game {
 
     }
 
-
-
-    addOwnedSpace(space) {
+    addOwnedSpace(space, player) {
 
         let row;
         let hasRow = false;
@@ -130,7 +129,14 @@ class Game {
             }
         }
 
-        console.log([this.playerOne.ownedSpaces, this.playerTwo.ownedSpaces])
+        //for testing which spaces are owned by players
+        //console.log([this.playerOne.ownedSpaces, this.playerTwo.ownedSpaces])
+
+        if (hasRow === true) {
+            this.placeWinLine(row);
+            this.increaseScore(player);
+            this.updateScore(player);
+        }
 
     }
 
@@ -160,10 +166,7 @@ class Game {
 
     }
 
-    /*
     placeWinLine(row) {
-
-        // row parameter needs to match winLine css class
 
         const winLine = document.getElementById('winLine');
 
@@ -172,31 +175,118 @@ class Game {
 
     }
 
+
+    increaseScore(player) {
+        player.score++;
+    }
+
     updateScore(player) {
 
-        player.score++;
+        const playerOneScoreText = document.getElementById('playerOneScoreText');
+        const playerTwoScoreText = document.getElementById('playerTwoScoreText');
+
+        if (player === this.playerOne) {
+            playerOneScoreText.textContent = this.playerOne.score;
+        } else if (player === this.playerTwo) {
+            playerTwoScoreText.textContent = this.playerTwo.score;
+        }
+
+        console.log([this.playerOne.score, this.playerTwo.score]);
 
     }
 
-    changeTurn() {
+    resetScore() {
+
+        this.playerOne.score = 0;
+        this.playerTwo.score = 0;
+
+    }
+
+    setActivePlayer() {
+
+        let activePlayer;
+
+        if (this.playerOne.myTurn === true) {
+            activePlayer = this.playerOne;
+            playerOneText.classList.add('activePlayer');
+        } else if (this.playerTwo === true) {
+            activePlayer = this.playerTwo
+            playerTwoText.classList.add('activePlayer');
+        }
+
+        return activePlayer;
+
+    }
+
+    updateActivePlayer() {
+
+        const activePlayerIndicator = document.getElementById('activePlayerIndicator');
 
         this.playerOne.myTurn = !this.playerOne.myTurn;
         this.playerTwo.myTurn = !this.playerTwo.myTurn;
 
+        if (this.playerOne.myTurn === true) {
+            activePlayerIndicator.classList.remove('playerTwoActive');
+            activePlayer = this.playerOne;
+        } else if (this.playerTwo.myTurn === true) {
+            activePlayerIndicator.classList.add('playerTwoActive');
+            activePlayer = this.playerTwo;
+        }
+
+        console.log(activePlayer);
+
     }
 
-    takeTurn() {
+    takeTurn(space, player) {
 
+        // need to figure out how to access which space is clicked on in addOwnedSpace argument
+        // Fix: added a parameter to takeTurn(), used as an argument in the event listener when the
+        // board is generated. the same value is then accessed inside takeTurn() by addOwnedSpace()
+        this.addOwnedSpace(space, player);
+        this.updateActivePlayer();
 
 
     }
 
+    /*
 
+    endGame() {
 
-    newGame() {
+        // if someone has won, alert who won, and instruct players to press play again to keep going
+        // or reset to start again from 0
+        // if no one has won (if playerOne.ownedSpaces.length === 5 && hasRow === false), alert that
+        // the game is a tie and encourage the players to press play again
 
-        winLine.className = '';
-        winLine.classList.add('hidden');
+    }
+
+    */
+
+    createButtons() {
+        const playAgainButton = document.getElementById('playAgainButton');
+        const resetButton = document.getElementById('resetButton');
+
+        playAgainButton.addEventListener('click', () => {
+
+            this.playAgain();
+
+        });
+
+        resetButton.addEventListener('click', () => {
+
+            this.resetGame();
+
+        });
+    }
+
+    playAgain() {
+
+        this.board.clearGameBoard();
+        this.playerOne.resetOwnedSpaces();
+        this.playerTwo.resetOwnedSpaces();
+
+        if (winLine.className != '') {
+            winLine.setAttribute('class', 'winLine hidden');
+        }
 
     }
 
@@ -204,12 +294,16 @@ class Game {
 
         this.playerOne.score = 0;
         this.playerTwo.score = 0;
-        winLine.className = '';
-        winLine.classList.add('hidden');
+
+        this.resetScore();
+        this.updateScore(this.playerOne);
+        this.updateScore(this.playerTwo);
+
+        this.playAgain();
 
     }
 
-    */
+
 }
 
 const newGame = new Game();
@@ -217,10 +311,15 @@ const newGame = new Game();
 newGame.createGameBoard();
 newGame.createPlayerOne();
 newGame.createPlayerTwo();
-
-//let board = new Gameboard();
-
-//board.generateGameBoard();
-
+let activePlayer = newGame.setActivePlayer();
 
 console.log(newGame);
+
+
+/*
+To do:
+
+- connect scoreText dom elements to JS for visual score increases
+- complete play again and reset buttons
+
+*/

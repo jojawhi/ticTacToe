@@ -47,4 +47,12 @@ class Gameboard {
 
     }
 
+    clearGameBoard() {
+        for (const boardSpace of this.spaces) {
+            boardSpace.innerHTML = '';
+            boardSpace.classList.remove('p1');
+            boardSpace.classList.remove('p2');
+        }
+    }
+
 }

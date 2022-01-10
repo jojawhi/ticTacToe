@@ -32,6 +32,8 @@ class Player {
 
     }
 
-}
+    resetOwnedSpaces() {
+        this.ownedSpaces = [];
+    }
 
-// Git check comment
+}

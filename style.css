@@ -33,20 +33,25 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -56,9 +61,9 @@ table {
 
 :root {
     --teal-1: hsl(185, 100%, 50%);
-    --teal-2: hsl(185, 70%, 15%);
+    --teal-2: hsl(185, 50%, 15%);
     --pink-1: hsl(305, 100%, 70%);
-    --pink-2: hsl(305, 70%, 15%);
+    --pink-2: hsl(305, 50%, 15%);
     --yellow-1: hsl(50, 100%, 50%);
     --yellow-2: hsl(50, 100%, 30%);
     --white-1: hsl(40, 30%, 95%);
@@ -112,7 +117,9 @@ body,
 .playerText {
     font-size: 1.375rem;
     font-weight: 300;
+    line-height: 2.5rem;
     margin-bottom: 0.5rem;
+    transition: all 300ms;
 }
 
 #playerOneScore h2 {
@@ -198,7 +205,7 @@ body,
 
 .yellow {
 
-    animation: yellowFlicker 12s -2s infinite alternate;
+    animation: yellowFlicker 12s -3s infinite alternate;
 
 }
 
@@ -303,18 +310,18 @@ body,
 }
 
 .firstColumn {
-    top: 7.5rem;
+    top: 9.925rem;
     transform: translateX(-5.5rem);
     animation: verticalAnimate 1s linear forwards;
 }
 
 .secondColumn {
-    top: 7.5rem;
+    top: 9.925rem;
     animation: verticalAnimate 1s linear forwards;
 }
 
 .thirdColumn {
-    top: 7.5rem;
+    top: 9.925rem;
     transform: translateX(5.5rem);
     animation: verticalAnimate 1s linear forwards;
 }
@@ -337,7 +344,7 @@ body,
 }
 
 .diagonalLeft {
-    top: 7.875rem;
+    top: 10.25rem;
     left: 2rem;
     transform: rotate(-45deg);
     transform-origin: top;
@@ -345,7 +352,7 @@ body,
 }
 
 .diagonalRight {
-    top: 7.875rem;
+    top: 10.25rem;
     right: 2rem;
     transform: rotate(45deg);
     transform-origin: top;
@@ -358,6 +365,21 @@ body,
 
 .p2 {
     background: var(--pink-2);
+}
+
+.activeIndicator {
+    position: absolute;
+    height: 2.75rem;
+    width: 8.625rem;
+    background: transparent;
+    border: 2px inset var(--white-1);
+    border-radius: 8px;
+    left: 0.5rem;
+    transition: all 300ms;
+}
+
+.playerTwoActive {
+    transform: translateX(9.025rem);
 }
 
 @keyframes tealFlicker {
