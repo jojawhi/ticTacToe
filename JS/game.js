@@ -129,7 +129,7 @@ class Game {
             }
         }
 
-        //for testing which spaces are owned by players
+        //for checking which spaces are owned by players
         //console.log([this.playerOne.ownedSpaces, this.playerTwo.ownedSpaces])
 
         if (hasRow === true) {
@@ -319,7 +319,8 @@ console.log(newGame);
 /*
 To do:
 
-- connect scoreText dom elements to JS for visual score increases
-- complete play again and reset buttons
+- complete endGame function that will show a modal with play again and reset buttons on win or tie
+- need styles and dom elements for the endGame modal
+- add AI player that will make specific moves
 
 */
