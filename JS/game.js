@@ -136,6 +136,9 @@ class Game {
             this.placeWinLine(row);
             this.increaseScore(player);
             this.updateScore(player);
+            this.endGame(hasRow, player);
+        } else if (hasRow === false) {
+            this.checkForTie(hasRow, player);
         }
 
     }
@@ -162,6 +165,16 @@ class Game {
 
             };
 
+        }
+
+    }
+
+    checkForTie(winCondition, player) {
+
+        const filledSpaces = Number(this.playerOne.ownedSpaces.length + this.playerTwo.ownedSpaces.length);
+
+        if (filledSpaces === 9) {
+            this.endGame(winCondition, player);
         }
 
     }
@@ -248,9 +261,29 @@ class Game {
 
     }
 
-    /*
 
-    endGame() {
+    endGame(winCondition, player) {
+
+        const endModal = document.getElementById('endModal');
+        const winnerText = document.getElementById('winnerText');
+
+        if (winCondition === true) {
+
+            endModal.classList.remove('hidden');
+
+            if (player === this.playerOne) {
+                winnerText.textContent = `Player 1 wins!`;
+            } else if (player === this.playerTwo) {
+                winnerText.textContent = `Player 2 wins!`;
+            }
+
+        } else {
+
+            endModal.classList.remove('hidden');
+            winnerText.textContent = `It's a tie!`;
+
+        }
+
 
         // if someone has won, alert who won, and instruct players to press play again to keep going
         // or reset to start again from 0
@@ -259,7 +292,6 @@ class Game {
 
     }
 
-    */
 
     createButtons() {
         const playAgainButton = document.getElementById('playAgainButton');
@@ -287,6 +319,9 @@ class Game {
         if (winLine.className != '') {
             winLine.setAttribute('class', 'winLine hidden');
         }
+
+        const endModal = document.getElementById('endModal');
+        endModal.classList.add('hidden');
 
     }
 
@@ -319,8 +354,7 @@ console.log(newGame);
 /*
 To do:
 
-- complete endGame function that will show a modal with play again and reset buttons on win or tie
-- need styles and dom elements for the endGame modal
+- fix bug with modal fading in twice
 - add AI player that will make specific moves
 
 */

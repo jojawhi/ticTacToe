@@ -69,6 +69,7 @@ table {
     --white-1: hsl(40, 30%, 95%);
     --white-2: hsl(40 30% 95% / 0.25);
     --background: hsl(0, 0%, 17%);
+    --background-2: hsl(0 0% 17% / 0.9);
     --grey-1: hsl(0, 0%, 50%);
 }
 
@@ -86,7 +87,12 @@ body,
 #pageContainer {
     display: flex;
     flex-direction: column;
+    height: 40rem;
+    width: 100%;
+    max-width: 20rem;
     justify-content: space-between;
+    align-content: center;
+    margin: 0 auto;
     padding: 2rem 0.5rem;
     text-align: center;
 }
@@ -107,11 +113,21 @@ body,
         0 0 10px 2px var(--grey-1);
 }
 
-#scoresContainer,
-#buttonsContainer {
+#scoresContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 0.5rem;
+    grid-gap: 0.75rem;
+    max-width: 100%;
+
+}
+
+#buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 6rem;
+    width: 10rem;
+    margin: 0 auto;
 }
 
 .playerText {
@@ -310,18 +326,18 @@ body,
 }
 
 .firstColumn {
-    top: 9.925rem;
+    top: 11rem;
     transform: translateX(-5.5rem);
     animation: verticalAnimate 1s linear forwards;
 }
 
 .secondColumn {
-    top: 9.925rem;
+    top: 11rem;
     animation: verticalAnimate 1s linear forwards;
 }
 
 .thirdColumn {
-    top: 9.925rem;
+    top: 11rem;
     transform: translateX(5.5rem);
     animation: verticalAnimate 1s linear forwards;
 }
@@ -344,7 +360,7 @@ body,
 }
 
 .diagonalLeft {
-    top: 10.25rem;
+    top: 11.375rem;
     left: 2rem;
     transform: rotate(-45deg);
     transform-origin: top;
@@ -352,7 +368,7 @@ body,
 }
 
 .diagonalRight {
-    top: 10.25rem;
+    top: 11.375rem;
     right: 2rem;
     transform: rotate(45deg);
     transform-origin: top;
@@ -380,6 +396,43 @@ body,
 
 .playerTwoActive {
     transform: translateX(9.025rem);
+}
+
+.endModal {
+    position: absolute;
+    top: 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: center;
+    height: 15rem;
+    width: 15rem;
+    margin: 0 auto;
+    padding: 0.5rem;
+    border: 2px solid var(--white-1);
+    border-radius: 8px;
+    background: var(--background-2);
+    box-shadow:
+        0 0 2px 0 var(--white-1),
+        0 0 5px 0 var(--pink-1),
+        0 0 6px 0 var(--teal-1),
+        inset 0 0 2px 0 var(--white-1),
+        inset 0 0 5px 0 var(--pink-1),
+        inset 0 0 6px 0 var(--teal-1);
+    animation: fadeIn 3s linear forwards;
+}
+
+.endModalText {
+    color: var(--white-1);
+}
+
+.endModalHeading {
+    font-size: 1.25rem;
+    color: var(--yellow-1);
+    text-shadow:
+        0 0 1px var(--white-2),
+        0 0 3px var(--yellow-1),
+        0 0 7px var(--yellow-1);
 }
 
 @keyframes tealFlicker {
@@ -502,6 +555,16 @@ body,
 
     100% {
         height: 20rem;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 
