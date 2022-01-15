@@ -8,7 +8,7 @@ This project's focus was on factory functions, modules, and practice manipulatin
 
 ## Takeaway
 
-Although the project focus was supposed to be factory functions, at the advice of a mentor, I chose to try doing with ES6 classes instead. It was my first time using classes, and they seem pretty powerful.
+Although the project focus was supposed to be factory functions, at the advice of a mentor, I chose to use ES6 classes instead. It was my first time using classes, and they seem pretty powerful. One of the 'tricks' I picked up in this practice was passing parameters from a parent function as parameters in a child function.
 
 ## Future Additions
 
