@@ -87,9 +87,20 @@ body,
 #pageContainer {
     display: flex;
     flex-direction: column;
-    height: 40rem;
+    height: 100%;
     width: 100%;
-    max-width: 20rem;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0 auto;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+#gameContainer {
+    display: flex;
+    flex-direction: column;
+    height: 40rem;
+    width: 18rem;
     justify-content: space-between;
     align-content: center;
     margin: 0 auto;
@@ -98,9 +109,14 @@ body,
 }
 
 #gameBoardContainer {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+        "0 1 2"
+        "3 4 5"
+        "6 7 8";
     grid-gap: 0.5rem;
     width: 16rem;
     height: 16rem;
@@ -114,6 +130,7 @@ body,
 }
 
 #scoresContainer {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0.75rem;
@@ -215,13 +232,13 @@ body,
 
 .pink {
 
-    animation: pinkFlicker 14s -4s infinite;
+    animation: pinkFlicker 14s 4s infinite;
 
 }
 
 .yellow {
 
-    animation: yellowFlicker 12s -3s infinite alternate;
+    animation: yellowFlicker 12s 3s infinite alternate;
 
 }
 
@@ -326,50 +343,50 @@ body,
 }
 
 .firstColumn {
-    top: 11rem;
+    top: 0.5rem;
     transform: translateX(-5.5rem);
     animation: verticalAnimate 1s linear forwards;
 }
 
 .secondColumn {
-    top: 11rem;
+    top: 0.5rem;
     animation: verticalAnimate 1s linear forwards;
 }
 
 .thirdColumn {
-    top: 11rem;
+    top: 0.5rem;
     transform: translateX(5.5rem);
     animation: verticalAnimate 1s linear forwards;
 }
 
 .firstRow {
-    left: 1.85rem;
+    left: 0.5rem;
     transform: translateY(-5.5rem);
     animation: horizontalAnimate 1s linear forwards;
 }
 
 .secondRow {
-    left: 1.85rem;
+    left: 0.5rem;
     animation: horizontalAnimate 1s linear forwards;
 }
 
 .thirdRow {
-    left: 1.85rem;
+    left: 0.5rem;
     transform: translateY(5.5rem);
     animation: horizontalAnimate 1s linear forwards;
 }
 
 .diagonalLeft {
-    top: 11.375rem;
-    left: 2rem;
+    top: 1rem;
+    left: 0.75rem;
     transform: rotate(-45deg);
     transform-origin: top;
     animation: diagonalAnimate 1s linear forwards;
 }
 
 .diagonalRight {
-    top: 11.375rem;
-    right: 2rem;
+    top: 1rem;
+    right: 0.75rem;
     transform: rotate(45deg);
     transform-origin: top;
     animation: diagonalAnimate 1s linear forwards;
@@ -390,12 +407,12 @@ body,
     background: transparent;
     border: 2px inset var(--white-1);
     border-radius: 8px;
-    left: 0.5rem;
+    left: -0.25rem;
     transition: all 300ms;
 }
 
 .playerTwoActive {
-    transform: translateX(9.025rem);
+    transform: translateX(8.75rem);
 }
 
 .endModal {

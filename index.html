@@ -12,37 +12,39 @@
 </head>
 <body>
     <div id='pageContainer'>
-        <h1 class='pageTitle'><span class='teal'>TIC</span> <span class='pink'>TAC</span> <span class="yellow">TOE</span></h1>
-        <div class='container' id='gameBoardContainer'>
-            <div class="boardSpace" id="spaceOne" value="0"></div>
-            <div class="boardSpace" id="spaceTwo" value="1"></div>
-            <div class="boardSpace" id="spaceThree" value="2"></div>
-            <div class="boardSpace" id="spaceFour" value="3"></div>
-            <div class="boardSpace" id="spaceFive" value="4"></div>
-            <div class="boardSpace" id="spaceSix" value="5"></div>
-            <div class="boardSpace" id="spaceSeven" value="6"></div>
-            <div class="boardSpace" id="spaceEight" value="7"></div>
-            <div class="boardSpace" id="spaceNine" value="8"></div>
-            <div class="winLine hidden" id="winLine"></div>
-        </div>
+        <div id="gameContainer">
+            <h1 class='pageTitle'><span class='teal'>TIC</span> <span class='pink'>TAC</span> <span class="yellow">TOE</span></h1>
+            <div class='container' id='gameBoardContainer'>
+                <div class="boardSpace" id="spaceOne" value="0"></div>
+                <div class="boardSpace" id="spaceTwo" value="1"></div>
+                <div class="boardSpace" id="spaceThree" value="2"></div>
+                <div class="boardSpace" id="spaceFour" value="3"></div>
+                <div class="boardSpace" id="spaceFive" value="4"></div>
+                <div class="boardSpace" id="spaceSix" value="5"></div>
+                <div class="boardSpace" id="spaceSeven" value="6"></div>
+                <div class="boardSpace" id="spaceEight" value="7"></div>
+                <div class="boardSpace" id="spaceNine" value="8"></div>
+                <div class="winLine hidden" id="winLine"></div>
+            </div>
 
-        <div class="container" id="scoresContainer">
-            <div class="score" id="playerOneScore">
-                <h2 class="playerText" id="playerOneText">Player 1</h2>
-                <p class="scoreText" id="playerOneScoreText">0</p>
+            <div class="container" id="scoresContainer">
+                <div class="score" id="playerOneScore">
+                    <h2 class="playerText" id="playerOneText">Player 1</h2>
+                    <p class="scoreText" id="playerOneScoreText">0</p>
+                </div>
+                <div class="score" id="playerTwoScore">
+                    <h2 class="playerText" id="playerTwoText">Player 2</h2>
+                    <p class="scoreText" id="playerTwoScoreText">0</p>
+                </div>
+                <div class="activeIndicator" id="activePlayerIndicator"></div>
             </div>
-            <div class="score" id="playerTwoScore">
-                <h2 class="playerText" id="playerTwoText">Player 2</h2>
-                <p class="scoreText" id="playerTwoScoreText">0</p>
-            </div>
-            <div class="activeIndicator" id="activePlayerIndicator"></div>
-        </div>
-        <div class="endModal hidden" id="endModal">
-            <h2 class="endModalText endModalHeading" id="winnerText">Player 1 wins!</h2>
-            <p class="endModalText" id="instructions">Hit 'Play Again' to continue playing with the same scores or 'Reset' to start over from 0</p>
-            <div class="container" id="buttonsContainer">
-                <button class="button" id="playAgainButton">Play Again</button>
-                <button class="button" id="resetButton">Reset</button>
+            <div class="endModal hidden" id="endModal">
+                <h2 class="endModalText endModalHeading" id="winnerText">Player 1 wins!</h2>
+                <p class="endModalText" id="instructions">Hit 'Play Again' to continue playing with the same scores or 'Reset' to start over from 0</p>
+                <div class="container" id="buttonsContainer">
+                    <button class="button" id="playAgainButton">Play Again</button>
+                    <button class="button" id="resetButton">Reset</button>
+                </div>
             </div>
         </div>
     </div>
