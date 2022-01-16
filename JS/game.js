@@ -354,7 +354,7 @@ console.log(newGame);
 /*
 To do:
 
-- fix bug with modal fading in twice
 - add AI player that will make specific moves
+- clean up console.logs and comments
 
 */
