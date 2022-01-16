@@ -243,6 +243,7 @@ body,
 }
 
 .boardSpace {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -289,29 +290,31 @@ body,
 */
 
 .exDiv {
-    pointer-events: none;
-    font-size: 4.25rem;
-    font-weight: 900;
-    color: var(--teal-1);
+    height: 4rem;
+    width: 0.375rem;
+    margin:  0 auto;
+    background: var(--teal-1);
+    transform: rotate(45deg);
+    box-shadow:
+        0 0 2px 0 var(--white-1),
+        0 0 4px 0 var(--teal-1),
+        0 0 6px 0 var(--teal-1);
 }
 
-.ex {
-    text-shadow:
-        0 0 1px var(--white-2),
-        0 0 3px var(--teal-1),
-        0 0 10px var(--teal-1);
-
-        /*
-        https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting
-        prevent text-selection
-        */
-        -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-        -khtml-user-select: none; /* Konqueror HTML */
-        -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+.exDiv::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4rem;
+    width: 0.375rem;
+    margin: 0 auto;
+    background: var(--teal-1);
+    transform: rotate(-90deg);
+    box-shadow:
+        0 0 2px 0 var(--white-1),
+        0 0 4px 0 var(--teal-1),
+        0 0 6px 0 var(--teal-1);
 }
 
 .ohDiv {
@@ -322,10 +325,10 @@ body,
     border-radius: 50%;
     border: .375rem var(--pink-1) solid;
     box-shadow:
-        0 0 2px 0 var(--white-2),
+        0 0 2px 0 var(--white-1),
         0 0 4px 0 var(--pink-1),
         0 0 6px 0 var(--pink-1),
-        inset 0 0 2px 0 var(--white-2),
+        inset 0 0 2px 0 var(--white-1),
         inset 0 0 4px 0 var(--pink-1),
         inset 0 0 6px 0 var(--pink-1);
 }

@@ -31,10 +31,6 @@ class Gameboard {
 
         const exDiv = document.createElement('div')
         exDiv.classList.add('exDiv');
-        const ex = document.createElement('span');
-        ex.innerHTML = '&#x2715;';
-        ex.classList.add('ex');
-        exDiv.appendChild(ex);
         boardSpace.appendChild(exDiv);
 
     }
