@@ -25,6 +25,14 @@
                 <div class="boardSpace" id="spaceEight" value="7"></div>
                 <div class="boardSpace" id="spaceNine" value="8"></div>
                 <div class="winLine hidden" id="winLine"></div>
+                <div class="endModal hidden" id="endModal">
+                    <h2 class="endModalText endModalHeading" id="winnerText">Player 1 wins!</h2>
+                    <p class="endModalText" id="instructions">Hit 'Play Again' to continue playing with the same scores or 'Reset' to start over from 0</p>
+                    <div class="container" id="buttonsContainer">
+                        <button class="button" id="playAgainButton">Play Again</button>
+                        <button class="button" id="resetButton">Reset</button>
+                    </div>
+                </div>
             </div>
 
             <div class="container" id="scoresContainer">
@@ -37,14 +45,6 @@
                     <p class="scoreText" id="playerTwoScoreText">0</p>
                 </div>
                 <div class="activeIndicator" id="activePlayerIndicator"></div>
-            </div>
-            <div class="endModal hidden" id="endModal">
-                <h2 class="endModalText endModalHeading" id="winnerText">Player 1 wins!</h2>
-                <p class="endModalText" id="instructions">Hit 'Play Again' to continue playing with the same scores or 'Reset' to start over from 0</p>
-                <div class="container" id="buttonsContainer">
-                    <button class="button" id="playAgainButton">Play Again</button>
-                    <button class="button" id="resetButton">Reset</button>
-                </div>
             </div>
         </div>
     </div>
