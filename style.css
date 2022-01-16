@@ -216,7 +216,7 @@ body,
 
 .teal {
 
-    animation: tealFlicker 10s infinite;
+    animation: tealFlicker 10s 1s infinite;
 
 }
 
@@ -436,7 +436,7 @@ body,
         inset 0 0 2px 0 var(--white-1),
         inset 0 0 5px 0 var(--pink-1),
         inset 0 0 6px 0 var(--teal-1);
-    animation: fadeIn 3s linear forwards;
+    animation: fadeIn 3s 2s linear forwards;
 }
 
 .endModalText {
